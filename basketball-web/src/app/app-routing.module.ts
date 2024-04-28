@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationGuard } from './services/authentication.guard';
+
 
 const routes: Routes =
   [
@@ -11,15 +13,18 @@ const routes: Routes =
     },
     {
       path: 'results',
-      loadChildren: () => import('./pages/results/results.module').then(m => m.ResultsModule)
+      loadChildren: () => import('./pages/results/results.module').then(m => m.ResultsModule),
+      canActivate: [AuthenticationGuard]
     },
     {
-      path: 'create-results',
-      loadChildren: () => import('./pages/create-results/create-results.module').then(m => m.CreateResultsModule)
+      path: 'create_results',
+      loadChildren: () => import('./pages/create-results/create-results.module').then(m => m.CreateResultsModule),
+      canActivate: [AuthenticationGuard]
     },
     {
       path: 'favourite',
-      loadChildren: () => import('./pages/favourite/favourite.module').then(m => m.FavouriteModule)
+      loadChildren: () => import('./pages/favourite/favourite.module').then(m => m.FavouriteModule),
+      canActivate: [AuthenticationGuard]
     },
     {
       path: '**',

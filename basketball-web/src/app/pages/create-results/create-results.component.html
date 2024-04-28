@@ -1,1 +1,28 @@
-<p>create-results works!</p>
+<div class="main_component">
+    <h1>Új eredmény megadása</h1>
+    <form [formGroup]="newResultForm" (ngSubmit)="createResult()">
+        <mat-form-field>
+            <mat-label for="newHome">Hazai csapat:</mat-label>
+            <input matInput type="text" formControlName="newHome"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="newAway">Vendég csapat:</mat-label>
+            <input matInput type="text" formControlName="newAway"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="newHomePts">Hazai pontszáma:</mat-label>
+            <input matInput type="number" formControlName="newHomePts"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="newAwayPts">Vendég pontszáma:</mat-label>
+            <input matInput type="number" formControlName="newAwayPts"/>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="newDate">Dátum:</mat-label>
+            <input matInput type="date" formControlName="newDate"/>
+        </mat-form-field>
+        <span class="buttons">
+            <button mat-raised-button color="primary" type="submit">Létrehoz</button>
+        </span>
+    </form>
+</div>
