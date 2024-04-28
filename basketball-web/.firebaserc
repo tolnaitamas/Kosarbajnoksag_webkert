@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "basketball-web-4d10a": {
+      "hosting": {
+        "basketball-web": [
+          "basketball-results"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "basketball-web-4d10a"
+  }
+}
