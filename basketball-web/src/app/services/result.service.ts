@@ -43,4 +43,8 @@ export class ResultService {
     return this.fs.collection<Favourite>('Favourites').add(favouriteResult);
   }
 
+  deleteFromResults(result: ResultFS){
+    this.fs.collection<ResultFS>("Results").doc(result.resultId).delete();
+  }
+
 }

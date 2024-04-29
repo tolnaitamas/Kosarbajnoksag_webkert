@@ -1,7 +1,7 @@
 <div class="main_component">
 
   <span class="button">
-    <a routerLink="/create_results"><button mat-raised-button color="primary">Új esemény létrehozása</button></a>
+    <a routerLink="/create_results"><button mat-raised-button color="primary">Új eredmény</button></a>
   </span>
 
   <mat-card class="card" *ngFor="let result of results;">
@@ -19,11 +19,11 @@
           <td colspan="1">{{result.away}}</td>
         </tr>
         <tr>
-          <td><img src="{{result.homeImg}}.png" /></td>
-          <td>{{result.homePts}}</td>
-          <td class="doubledot">:</td>
+          <td class="imgsrc"><img src="{{result.homeImg}}.png" /></td>
+          <td class="pts">{{result.homePts}}</td>
+          <td>:</td>
           <td>{{result.awayPts}}</td>
-          <td><img src="{{result.awayImg}}.png" /></td>
+          <td class="imgsrc"><img src="{{result.awayImg}}.png" /></td>
         </tr>
       </table>
 
@@ -31,6 +31,7 @@
     <mat-divider inset></mat-divider>
     <mat-card-actions>
       <button mat-button (click)="addToFavourite(result)">Kedvencekhez</button>
+      <button mat-button (click)="deleteFromResults(result)">Törlés</button>
     </mat-card-actions>
   </mat-card>
 </div>

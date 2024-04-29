@@ -32,4 +32,8 @@ export class ResultsComponent implements OnInit{
     });
   }
 
+  deleteFromResults(result: ResultFS){
+    this.resultService.deleteFromResults(result)
+  }
+
 }
