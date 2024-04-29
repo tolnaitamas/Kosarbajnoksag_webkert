@@ -18,7 +18,7 @@ export class FavouriteService {
   }
 
   deleteFromFavourites(favourite: FavouriteFS){
-    return this.fs.collection<FavouriteFS>('Cart').doc(favourite.itemId).delete();
+    return this.fs.collection<FavouriteFS>('Favourites').doc(favourite.itemId).delete();
   }
 
 
