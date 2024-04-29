@@ -10,7 +10,7 @@ export class ResultDatePipe implements PipeTransform {
   transform(result: Result): string {
     let newDate = new Date(result.date);
     const datePipe = new DatePipe('en-US');
-    let date = datePipe.transform(newDate,'MMMM d, h:mm')?.toString();
+    let date = datePipe.transform(newDate,'EEEE, MMMM d, y')?.toString();
 
     // @ts-ignore
     return date;

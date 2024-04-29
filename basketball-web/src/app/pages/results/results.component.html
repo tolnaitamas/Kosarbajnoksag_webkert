@@ -5,15 +5,27 @@
   </span>
 
   <mat-card class="card" *ngFor="let result of results;">
-    <mat-card-subtitle>{{result | resultDate}}</mat-card-subtitle>
     <mat-card-content>
-      <p>{{result.home}}</p>
-      <p>{{result.homePts}}</p>
-      <p>{{result.away}}</p>
-      <p>{{result.awayPts}}</p>
-      <p>{{result.date}}</p>
-      <img src="{{result.homeImg}}.png" />
-      <img src="{{result.awayImg}}.png" />
+
+      <table>
+        <tr>
+          <th colspan="5">{{result | resultDate}}</th>
+        </tr>
+        <tr>
+          <td colspan="1">{{result.home}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td colspan="1">{{result.away}}</td>
+        </tr>
+        <tr>
+          <td><img src="{{result.homeImg}}.png" /></td>
+          <td>{{result.homePts}}</td>
+          <td class="doubledot">:</td>
+          <td>{{result.awayPts}}</td>
+          <td><img src="{{result.awayImg}}.png" /></td>
+        </tr>
+      </table>
 
     </mat-card-content>
     <mat-divider inset></mat-divider>
