@@ -1,3 +1,24 @@
-<span class="button">
+<div class="main_component">
+
+  <span class="button">
     <a routerLink="/create_results"><button mat-raised-button color="primary">Új esemény létrehozása</button></a>
   </span>
+
+  <mat-card class="card" *ngFor="let result of results;">
+    <mat-card-subtitle>{{result | resultDate}}</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{result.home}}</p>
+      <p>{{result.homePts}}</p>
+      <p>{{result.away}}</p>
+      <p>{{result.awayPts}}</p>
+      <p>{{result.date}}</p>
+      <img src="{{result.homeImg}}.png" />
+      <img src="{{result.awayImg}}.png" />
+
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button mat-button (click)="addToFavourite(result)">Kedvencekhez</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
